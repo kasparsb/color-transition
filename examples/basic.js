@@ -3,7 +3,7 @@ var pel = document.querySelector('.position')
 
 var colorStops = ['red', '#ffdd1f', 'green'];
 
-var ct = new window.webit.colorTransition.default(colorStops);
+var ct = new window.webit.colorTransition(colorStops);
 
 function setColor(percents) {
     pel.textContent = percents+'%';
