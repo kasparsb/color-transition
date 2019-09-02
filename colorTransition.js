@@ -61,4 +61,4 @@ colorTransition.prototype = {
     }
 }
 
-export default colorTransition
+export { colorTransition }
