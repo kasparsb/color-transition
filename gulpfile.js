@@ -29,7 +29,7 @@ function getBrowserify(entry) {
         cache: {}, 
         packageCache: {},
 
-        standalone: 'webit.colorTransition'
+        standalone: 'webit'
     })
 }
 
@@ -51,7 +51,7 @@ function bundleJs(browserify, compress, firstRun) {
         console.log(er.annotated);
     }
 
-    var destFileName = 'colorTransition.min-'+pkg.version+'.js';
+    var destFileName = 'colorTransition.min.js';
 
     var s = browserify;
 
