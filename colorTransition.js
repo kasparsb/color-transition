@@ -8,16 +8,19 @@ function formatRgbaColorFromArray(color) {
     }
 }
 
-function colorTransition(colorStops, width) {
+function colorTransition(colorStops, width, height) {
 
     if (!width) {
         width = 1000;
+    }
+    if (!height) {
+        height = 1;
     }
 
     this.canvas = document.createElement('canvas')
     this.context = this.canvas.getContext('2d');
 
-    this.setDimensions(width, 1);
+    this.setDimensions(width, height);
     this.setColorStops(colorStops);
 
     this.draw();
@@ -25,7 +28,7 @@ function colorTransition(colorStops, width) {
 
 colorTransition.prototype = {
     createGradient(colorStops) {
-        let gradient = this.context.createLinearGradient(0, 0, this.canvas.width, 0);
+        let gradient = this.context.createLinearGradient(0, 0, this.canvas.width, this.canvas.height);
 
         // Color stops are proportionaly divided by width
         let step = 1 / (colorStops.length-1);
