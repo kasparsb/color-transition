@@ -58,6 +58,12 @@ colorTransition.prototype = {
     },
     getColor(percentOfWidth) {
         return formatRgbaColorFromArray(this.context.getImageData((this.canvas.width-1) * (percentOfWidth/100), 0, 1, 1).data); 
+    },
+    /**
+     * Return canvas dom element
+     */
+    getCanvasEl() {
+        return this.canvas;
     }
 }
 
