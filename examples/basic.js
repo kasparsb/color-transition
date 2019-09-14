@@ -2,16 +2,15 @@ var el = document.querySelector('body')
 var pel = document.querySelector('.position')
 
 var colorStops = ['red', '#ffdd1f', 'green'];
+var ct = new window.webit.colorTransition.default(colorStops);
 
-var ct = new window.webit.colorTransition(colorStops);
-
-function setColor(percents) {
-    pel.textContent = percents+'%';
-    el.style.background = ct.getColor(percents).rgba
+function setColor(progress) {
+    pel.textContent = "progress: "+progress;
+    el.style.background = ct.getColor(progress).rgba
 }
 
 function handleMove(ev) {
-    setColor(Math.round((ev.pageX / el.getBoundingClientRect().width) * 100))
+    setColor(ev.pageX / el.getBoundingClientRect().width)
 }
 
 function outputColorStops(colorStops) {
@@ -19,7 +18,6 @@ function outputColorStops(colorStops) {
     for (var i = 0; i < colorStops.length; i++) {
         var span = document.createElement('span')
         span.style.background = colorStops[i];
-        console.log(span);
         el.appendChild(span);
     }
 }
