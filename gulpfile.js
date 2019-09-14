@@ -29,7 +29,7 @@ function getBrowserify(entry) {
         cache: {}, 
         packageCache: {},
 
-        standalone: 'webit'
+        standalone: 'webit.colorTransition'
     })
 }
 
